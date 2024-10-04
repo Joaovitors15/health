@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/balanca.png" type="image/x-icon">
+    <title>health calc</title>
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <header>
+        <h1>HealthCalc</h1>
+        <p>calculadora de métricas de saúde</p>
+    </header>
+  <!--Entrada de dados-->
+    <form name="frmHealth">
+        <input type="number" name="txtIdade" placeholder="Idade">
+        <input type="number" name="txtPeso" placeholder="Peso (kg)">
+        <input type="number" name="txtAltura" placeholder="Altura (cm)">
+
+        <div class="radio">
+            <input type="radio" name="grupo" id="m">Masculino
+            <input type="radio" name="grupo" id="f">Feminino
+        </div>
+        <select name="nivel" id="atividade">
+            <option value="" selected>selecione o nivel de atividade fisica:</option>
+            <option value="1.2">Sedentario</option>
+            <option value="1.375">Exercicio leve (1-2 dias/semana)</option>
+            <option value="1.55 "> Exercicio moderado (3-5 dias/semana)
+            </option>
+            <option value="1.725"> Exercicio pesado (6-7 dias/semana)
+            </option>
+            <option value="1.9">Atleta (1 a 2 treinos/dia)</option>
+            
+        </select>
+        <div id="buttons">
+            <input type="button" value="Calcular" onclick="calcular()">
+            <input type="reset" value="Limpar" onclick="Limpar()">
+        </div>
+    </form>
+    <hr>
+     <!--Imc e mostrador coração pusante-->
+     <div class="info">
+        <!--mostrador-->
+         <div class="infoIMC">
+              <img src="img/reset.png" alt="mostrador" id="grafico">
+              <h2 id="imc">IMC</h2>
+              <h3 id="status">status</h3>
+         </div>
+        <!--coração pulsante-->
+        <div class="coracao">
+            <div class="quadrado"></div>
+            <div class="circulo top"></div>
+            <div class="circulo left"></div>
+        </div>
+        <h2 id="freq">FCM</h2>
+        
+     </div>
+     <hr>
+     <!--get e litros-->
+     <h2>Manutenção do peso:</h2>
+     <h3 id="calorias">Calorias/dia</h3>
+     <hr>
+     <h2>Consumo de agua:</h2>
+     <h3 id="agua">Litros/dia</h3>
+   
+    <script src="app.js"></script>
+</body>
+</html>
